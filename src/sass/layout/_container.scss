@@ -358,10 +358,6 @@ section {
 
 	+ .desc-area {
 		margin: 5px 0 0;
-		
-		@include breakpoint(tablet) {
-			margin: 10px 0 0;
-		}
 	}
 
 	li {
@@ -382,10 +378,6 @@ section {
 		&:focus,
 		&:hover {
 			color: $red;
-		}
-	
-		@include breakpoint(tablet) {
-			font-size: 0.9em;
 		}
 	}
 }
