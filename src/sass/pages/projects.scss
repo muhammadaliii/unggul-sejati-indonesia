@@ -84,10 +84,17 @@
 			}
 		}
 	}
+
 	.container-mix {
 		.mix {
 			padding-top: 15px;
 			padding-bottom: 20px;
+		}
+
+		.project-wrapper {
+			@include breakpoint(tablet) {
+				padding: 10px;
+			}
 		}
 	}
 
