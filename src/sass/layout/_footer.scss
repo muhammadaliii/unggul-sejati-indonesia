@@ -1,0 +1,258 @@
+footer {
+	a {
+		color: #c1c1c1;
+
+		&:focus,
+		&:hover {
+			color: $red;
+		}
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin: 0;
+
+			+ li {
+				@include breakpoint(tablet) {
+					margin: 6px 0 0;
+				}
+			}
+
+			i {
+				vertical-align: middle;
+				font-size: 1.4em;
+				
+				+ span {
+					margin: 0 0 0 4px;
+					
+					@include breakpoint(tablet) {
+						margin: 0 0 0 6px;
+					}
+				}
+			}
+
+			span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.row {
+		[class*='col-'] {
+			+ [class*='col-'] {
+				margin: 30px 0 0;
+				
+				@include breakpoint(tablet) {
+					margin: 0;
+				}
+			}
+
+			&.phone-email {
+				margin-top: 10px;
+				
+				@include breakpoint(tablet) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	.nav-top {
+		background-color: #353535;
+		padding: 40px 0;
+		
+		@include breakpoint(tablet) {
+			padding: 60px 0;
+		}
+
+		address {
+			margin: 0;
+			color: #c1c1c1;
+			line-height: 140%;
+		}
+	}
+
+	.nav-bottom {
+		background-color: #000;
+		text-align: center;
+		padding: 10px 0;
+
+		p {
+			font-size: 0.6em;
+			color: #c1c1c1;
+			letter-spacing: 0.5pt;
+			
+			@include breakpoint(small-mobile) {
+				font-size: 0.54em;
+			}
+
+			@include breakpoint(tablet) {
+				font-size: 0.8em;
+			}
+		}
+	}
+
+	.footer-logo {
+		display: block;
+		vertical-align: middle;
+		line-height: 100%;
+		font-size: 1.2em;
+		width: 220px;
+		letter-spacing: 0.5pt;
+		margin: 0 0 20px;
+
+		@include breakpoint(tablet) {
+			font-size: 1.3em;
+			width: 270px;
+		}
+
+		a {
+			position: relative;
+			display: block;
+			color: $white;
+			padding: 0 0 0 45px;
+			
+			@include breakpoint(tablet) {
+				padding: 0 0 0 50px;
+			}
+
+			&:hover {
+				@include breakpoint(wide) {
+					color: $red;
+				}
+			}
+		}
+
+		.logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: initial;
+			bottom: initial;
+			width: 40px;
+			height: 34px;
+			margin: 0 5px 0 0;
+			background-image: url('../assets/img/logo.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			transition: all 0.3s linear;
+
+			@include breakpoint(tablet) {
+				width: 42px;
+				height: 36px;
+			}
+		}
+
+		strong {
+			font-family: 'gilroy_black';
+			text-transform: uppercase;
+			font-weight: normal;
+		}
+	}
+
+	.phone {
+		li {
+			margin: 6px 0 0;
+		}
+	}
+
+	.sitemap {
+		a {
+			display: block;
+			padding: 8px 0;
+			border-top: 1px solid rgba(216, 216, 216, 0.4);
+			
+			@include breakpoint(tablet) {
+				display: inline-block;
+				padding: 0;
+				border: 0;
+			}
+		}
+
+		li {
+			&:last-child {
+				a {
+					border-bottom: 1px solid rgba(216, 216, 216, 0.4);
+					
+					@include breakpoint(tablet) {
+						border-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.social-media {
+		text-align: center;
+
+		@include breakpoint(tablet) {
+			text-align: left;
+		}
+
+		h6 {
+			color: #c1c1c1;
+			line-height: 100%;
+			margin: 0 0 10px;
+		}
+
+		a {
+			text-align: center;
+			display: block;
+			color: #353535;
+			background-color: #c1c1c1;
+			width: 36px;
+			height: 36px;
+			font-size: 1.1em;
+			line-height: 36px;
+			border-radius: 100%;
+			transition: all 0.3s linear;
+		}
+
+		li {
+			margin: 0;
+
+			+ li {
+				margin: 0 0 0 4px;
+			}
+
+			&.facebook {
+				a {
+					&:hover {
+						background-color: $facebook;
+						color: $white;
+					}
+				}
+			}
+
+			&.twitter {
+				a {
+					&:hover {
+						background-color: $twitter;
+						color: $white;
+					}
+				}
+			}
+
+			&.whatsapp {
+				@include breakpoint(desktop) {
+					display: none;
+				}
+
+				a {
+					font-size: 1.2em;
+					line-height: 31px;
+
+					&:hover {
+						background-color: $whatsapp;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

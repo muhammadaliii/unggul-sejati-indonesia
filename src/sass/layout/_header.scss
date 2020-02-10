@@ -1,0 +1,441 @@
+body {
+	&.on-scroll {
+		.header-fix {
+			background: rgba(0, 0, 0, 0.8);
+			box-shadow: 0 1px 3px 0 rgba(27,27,27,0.1), 0 4px 8px 0 rgba(27,27,27,0.1);
+
+			.brand-logo {
+				padding: 9px 0;
+				font-size: 1em;	
+
+				@include breakpoint(tablet) {
+					font-size: 1.2em;	
+					padding: 10px 0;
+				}
+
+				a {
+					color: $white;
+					padding-left: 38px;
+					
+					@include breakpoint(tablet) {
+						padding-left: 46px;
+					}
+				}
+
+				.logo {
+					width: 34px;
+					height: 28px;
+
+					@include breakpoint(tablet) {
+						width: 38px;
+						height: 34px;
+					}
+				}
+			}
+
+			.header-logo {
+				@include breakpoint(tablet) {
+					width: 220px;
+				}
+			}
+
+			.header-menu {
+				.menu {
+					a {
+						color: $white;
+
+						&:focus,
+						&:hover {
+							color: $red;
+						}
+					}
+
+					li {
+						@include breakpoint(wide) {
+							padding: 17px 0;
+						}
+
+						&.phone {
+							a {
+								color: $white;
+
+								&:focus,
+								&:hover {
+									color: $red;
+								}
+							}
+						}
+					}
+
+					.jcf-select {
+						.jcf-select-opener {
+							background-image: url('../assets/img/icon-arrow-down-white.png');
+						}
+
+						.jcf-select-text {
+							color: $white;
+						}
+					}
+
+					.vertical-line,
+					.horizon-line {
+						background-color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.header-fix {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: initial;
+	width: 100%;
+	z-index: 3;
+	transition: all 0.3s linear;
+	
+
+	&.full {
+		background: rgba(0,0,0,0.3);
+		background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.09) 70%, rgba(0,0,0,0.02) 92%, rgba(0,0,0,0) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.3)), color-stop(70%, rgba(0,0,0,0.09)), color-stop(92%, rgba(0,0,0,0.02)), color-stop(100%, rgba(0,0,0,0)));
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.09) 70%, rgba(0,0,0,0.02) 92%, rgba(0,0,0,0) 100%);
+		background: -o-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.09) 70%, rgba(0,0,0,0.02) 92%, rgba(0,0,0,0) 100%);
+		background: -ms-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.09) 70%, rgba(0,0,0,0.02) 92%, rgba(0,0,0,0) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.09) 70%, rgba(0,0,0,0.02) 92%, rgba(0,0,0,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+
+		@include breakpoint(wide) {
+			background: transparent;
+		}
+
+		.brand-logo {
+			a {
+				color: $white;
+
+				@include breakpoint(wide) {
+					color: $title-color;
+				}
+			}
+		}
+	}
+
+	&.show-menu {
+		background-color: rgba(0, 0, 0, 0.8);
+		
+		@include breakpoint(wide) {
+			background-color: transparent;
+		}
+
+		.brand-logo {
+			a {
+				color: $white;
+
+				@include breakpoint(wide) {
+					color: $title-color;
+				}
+			}
+		}
+	}
+
+	&.show-title {
+		.brand-logo {
+			strong {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.header-logo {
+		display: block;
+		z-index: 2;
+		position: relative;
+		float: left;
+		width: 220px;
+		transition: all 0.3s linear;
+
+		@include breakpoint(tablet) {
+			width: 270px;
+		}
+
+		@include breakpoint(small-mobile) {
+			width: 210px;
+		}
+	}
+
+	.brand-logo {
+		display: block;
+		vertical-align: middle;
+		line-height: 100%;
+		font-size: 1.2em;
+		padding: 10px 0;
+
+		@include breakpoint(tablet) {
+			font-size: 1.5em;
+		}
+
+		a {
+			position: relative;
+			display: block;
+			color: $title-color;
+			padding: 0 0 0 45px;
+			
+			@include breakpoint(tablet) {
+				padding: 0 0 0 58px;
+			}
+
+			&:hover {
+				@include breakpoint(wide) {
+					color: $red;
+				}
+			}
+		}
+
+		i {
+			display: none;
+		}
+
+		.logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: initial;
+			bottom: initial;
+			width: 40px;
+			height: 34px;
+			background-image: url('../assets/img/logo.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			transition: all 0.3s linear;
+
+			@include breakpoint(tablet) {
+				width: 50px;
+				height: 44px;
+			}
+		}
+
+		strong {
+			font-family: 'gilroy_black';
+			text-transform: uppercase;
+			font-weight: normal;
+		}
+	}
+
+	.header-menu {
+		display: table;
+		width: 100%;
+
+		.menu {
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			bottom: initial;
+			padding: 0;
+			z-index: 1;
+			opacity: 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			visibility: hidden;
+			pointer-events: none;
+			box-shadow: 0 1px 3px 0 rgba(27,27,27,0.2), 0 4px 8px 0 rgba(27,27,27,0.2);
+			transition: all 0.3s linear;
+			
+			@include breakpoint(wide) {
+				float: right;
+				position: relative;
+				background-color: transparent;
+				left: initial;
+				right: initial;
+				opacity: 1;
+				visibility: visible;
+				pointer-events: visible;
+				box-shadow: none;
+			}
+
+			&.show {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: visible;
+			}
+
+			ul {
+				padding: 0;
+			}
+
+			li {
+				margin: 0;
+				display: block;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				transition: all 0.3s linear;
+
+				@include breakpoint(wide) {
+					margin: 0 8px 0 0;
+					display: inline-block;
+					vertical-align: middle;
+					padding: 22px 0;
+					border-bottom: 0;
+				}
+
+				@include breakpoint(desktop) {
+					margin: 0 16px 0 0;
+				}
+
+				@include breakpoint(laptop) {
+					margin: 0 20px 0 0;
+				}
+
+				&:first-child {
+					border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+					@include breakpoint(wide) {
+						border-top: 0;
+					}
+				}
+
+				&:last-child {
+					margin: 0;
+					border-bottom: 0;
+				}
+
+				&.line {
+					display: none;
+
+					@include breakpoint(wide) {
+						display: inline-block;
+					}
+				}
+
+				&.phone {
+					display: none;
+
+					@include breakpoint(wide) {
+						display: inline-block;
+					}
+
+					a {
+						font-family: 'museosans_700';
+						
+						@include breakpoint(wide) {
+							color: $title-color;
+						}
+
+						&:focus,
+						&:hover {
+							@include breakpoint(wide) {
+								color: $red;
+							}
+						}
+					}
+				}
+			}
+
+			a {
+				color: $white;
+				font-size: 1.1em;
+				display: block;
+				line-height: 130%;
+				padding: 10px 16px;
+
+				@include breakpoint(tablet) {
+					padding: 10px 30px;
+				}
+
+				@include breakpoint(wide) {
+					color: $body-color;
+					padding: 0;
+					font-size: 1em;
+				}
+
+				@include breakpoint(desktop) {
+					font-size: 1.1em;
+				}
+
+				&:focus,
+				&:hover {
+					color: $red;
+				}
+
+				&.active {
+					color: $red;
+				}
+			}
+
+			.horizon-line {
+				display: block;
+				width: 20px;
+				height: 1px;
+				background-color: $body-color;
+			}
+
+			.vertical-line {
+				display: block;
+				width: 1px;
+				height: 20px;
+				background-color: $body-color;
+			}
+
+			.lang {
+				.lang-wrapper {
+					position: relative;
+					width: auto;
+				}
+
+				.jcf-select {
+					background-color: transparent;
+					border: 0;
+					padding: 10px 36px 10px 16px;
+					
+					@include breakpoint(tablet) {
+						padding: 10px 50px 10px 30px;
+					}
+
+					@include breakpoint(wide) {
+						padding: 0 26px 0 0;
+					}
+
+					select {
+						cursor: pointer;
+
+						&:hover {
+							+ .jcf-select-text {
+								@include breakpoint(wide) {
+									color: $red;
+								}
+							}
+						}
+					}
+
+					.jcf-select-text {
+						font-size: 1.1em;
+						line-height: 130%;
+						color: $white;
+						transition: all 0.3s linear;
+						
+						@include breakpoint(wide) {
+							color: $body-color;
+						}
+					}
+
+					.jcf-select-opener {
+						color: $white;
+						
+						@include breakpoint(tablet) {
+							right: 30px;
+						}
+
+						@include breakpoint(wide) {
+							right: 0;
+							color: $body-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}

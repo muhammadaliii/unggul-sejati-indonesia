@@ -1,0 +1,96 @@
+.form {
+	.form-control {
+		border: 0;
+		background-color: #EEEEEE;
+		padding: 8px 12px;
+		height: auto;
+		font-size: 1em;
+		outline: 0;
+		border-radius: 6px;
+
+		&:focus {
+			box-shadow: none;	
+		}
+	}
+
+	textarea {
+		&.form-control {
+			height: 160px;
+			resize: none;
+		}
+	}
+
+	::-webkit-input-placeholder {
+		color: #99A2A5;
+	}
+
+	:-moz-placeholder {
+		color: #99A2A5;
+	}
+
+	::-moz-placeholder {
+		color: #99A2A5;
+	}
+
+	:-ms-input-placeholder {  
+		color: #99A2A5;
+	}
+
+	.form-group {
+		position: relative;
+		
+		@include breakpoint(tablet) {
+			padding-top: 16px;
+		}
+
+		.help-block {
+			color: $red;
+			margin: 0;
+			font-weight: normal;
+			font-size: 0.8em;
+			pointer-events: none;
+			
+			@include breakpoint(tablet) {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: initial;
+				left: initial;
+			}
+		}
+
+		&.col-md-6 {
+			.help-block {
+				@include breakpoint(tablet) {
+					right: 5px;
+				}
+			}
+		}
+
+		&.has-error {
+			.form-control {
+				background-color: #ffe0e2;
+			}
+
+			::-webkit-input-placeholder {
+				color: $red;
+			}
+
+			:-moz-placeholder {
+				color: $red;
+			}
+
+			::-moz-placeholder {
+				color: $red;
+			}
+
+			:-ms-input-placeholder {  
+				color: $red;
+			}
+
+			.icon-down {
+				color: $red;
+			}
+		}
+	}
+}

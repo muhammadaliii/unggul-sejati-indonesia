@@ -1,0 +1,67 @@
+.certificate {
+	position: relative;
+
+	.bg-area {
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 0;
+		right: 0;
+		bottom: initial;
+		transform: translate(0, -50%);
+	}
+
+	.wrapper {
+		@include breakpoint(wide) {
+			padding: 0 6%;
+		}
+	}
+
+	.certificate-image {
+		margin: 10px 30px;
+		
+		@include breakpoint(tablet) {
+			margin: 30px 50px;
+		}
+
+		@include breakpoint(wide) {
+			margin: 0;
+		}
+	}
+
+	.title-section {
+		+ .certificate-image {
+			margin-top: 30px;
+		}
+	}
+}
+
+.awards {
+	.wrapper {
+		@include breakpoint(tablet) {
+			padding: 0 50px;
+		}
+
+		@include breakpoint(wide) {
+			padding: 0 6%;
+		}
+	}
+
+	.title-section {
+		+ .wrapper {
+			margin-top: 20px;
+			
+			@include breakpoint(wide) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.awards-image {
+		margin: 10px 30px;
+		
+		@include breakpoint(tablet) {
+			margin: 15px 0;
+		}
+	}
+}

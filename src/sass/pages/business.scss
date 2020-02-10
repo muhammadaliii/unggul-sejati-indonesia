@@ -1,0 +1,137 @@
+.business-detail {
+	.thumbnail-info {
+		+ .thumbnail-info {
+			margin-top: 30px;
+			
+			@include breakpoint(tablet) {
+				margin-top: 50px 0 0;
+			}
+		}
+
+		&.right-style {
+			.info-thumb {
+				.wrapper {
+					padding-right: 30px;
+				}
+			}
+		}
+	}
+
+	.image-area {
+		+ .info-thumb {
+			margin: 20px 0 0;
+			
+			@include breakpoint(wide) {
+				margin: 0;
+			}
+		}
+	}
+	
+	.info-thumb {
+		.wrapper {
+			padding-right: 30px;
+		}
+	}
+	
+	.business-image {
+		text-align: center;
+
+		img {
+			+ img {
+				margin: 10px 0 0;
+			}
+		}
+	}
+
+	.title-area {
+		h4 {
+			font-family: 'gilroy_black';
+			font-size: 2.2em;
+			text-transform: uppercase;
+			color: $title-color;
+			
+			@include breakpoint(tablet) {
+				font-size: 2.4em;
+			}
+		}
+
+		+ .desc-area {
+			margin: 16px 0 0;
+			
+			@include breakpoint(tablet) {
+				margin: 20px 0 0;
+			}
+		}
+	}
+
+	.desc-area {
+		h6 {
+			font-family: 'museosans_700';
+			font-size: 1.2em;
+			color: $title-color;
+			
+			@include breakpoint(tablet) {
+				font-size: 1.4em;
+			}
+
+			+ p {
+				margin: 6px 0 0;
+			}
+		}
+
+		p {
+			font-size: 1em;
+
+			@include breakpoint(tablet) {
+				font-size: 1.1em;
+			}
+
+			+ ul {
+				margin: 16px 0 0;
+		
+				@include breakpoint(tablet) {
+					margin: 20px 0 0;
+				}
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				position: relative;
+				padding: 0 0 0 16px;
+				
+				@include breakpoint(tablet) {
+					padding: 0 0 0 28px;
+				}
+
+				+ li {
+					margin: 16px 0 0;
+		
+					@include breakpoint(tablet) {
+						margin: 20px 0 0;
+					}
+				}
+
+				.circle {
+					width: 6px;
+					height: 6px;
+					background-color: $subtitle-color;
+					position: absolute;
+					top: 10px;
+					bottom: 0;
+					left: 0;
+					right: initial;
+					border-radius: 100%;
+					
+					@include breakpoint(tablet) {
+						width: 8px;
+						height: 8px;
+					}
+				}
+			}
+		}
+	}
+}

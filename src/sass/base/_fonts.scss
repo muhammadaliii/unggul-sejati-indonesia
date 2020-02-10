@@ -1,0 +1,30 @@
+@import 'variables';
+
+// Font Family Ex. (name, 'fonts/path')
+$font_family: (
+	museosans_300: '#{$font-path}/museo-sans/museosans_300',
+	museosans_500: '#{$font-path}/museo-sans/museosans_500',
+	museosans_700: '#{$font-path}/museo-sans/museosans_700',
+	
+	gilroy_medium: '#{$font-path}/gilroy/gilroy_medium',
+	gilroy_black: '#{$font-path}/gilroy/gilroy_black',
+);
+
+
+@each $name, $file in $font_family {
+	@if $font_idx==1 {
+		$font_default: $name;
+		$font_idx: 2;
+	}
+
+	@font-face {
+		font-family: $name;
+		src: url('#{$file}.eot');
+		src:
+			url('#{$file}.eot') format('embedded-opentype'),
+			url('#{$file}.woff2') format('woff2'),
+			url('#{$file}.woff') format('woff'), 
+			url('#{$file}.ttf') format('truetype'),
+			url('#{$file}.svg#{$name}') format('svg');
+	}
+}

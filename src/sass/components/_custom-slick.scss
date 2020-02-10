@@ -1,0 +1,152 @@
+.slick-slider {
+	.slick-slide {
+		outline: 0;
+	}
+}
+
+.slick-dotted {
+	&.slick-slider {
+		padding-bottom: 0;
+		margin: 0;
+		
+		@include breakpoint(wide) {
+			padding-bottom: 20px;
+		}
+	}
+}
+
+.slick-dots {
+    z-index: 2;
+	bottom: 16px;
+	
+	@include breakpoint(wide) {
+		bottom: 0;
+	}
+	
+	li {
+		width: auto;
+		height: auto;
+		vertical-align: middle;
+		margin: 0 3px;
+		transition: all 0.3s linear;
+
+		&.slick-active {
+			button {
+				background-color: $red;
+			}
+		}
+
+		button {
+			width: 6px;
+			height: 6px;
+			background-color: rgba(255, 255, 255, 0.6);
+			padding: 0;
+			border-radius: 100%;
+			transition: all 0.3s linear;
+			
+			@include breakpoint(tablet) {
+				width: 8px;
+				height: 8px;
+			}
+			
+			@include breakpoint(wide) {
+				background-color: rgba(153, 162, 165, 0.5);
+			}
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+.button-arrow {
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	outline: 0;
+	z-index: 4;
+	position: absolute;
+	top: 50%;
+	bottom: initial;
+	left: initial;
+	right: initial;
+	background-color: transparent;
+	box-shadow: none;
+	transition: all 0.3s linear;
+	transform: translate(0, -50%);
+
+	@include breakpoint(wide) {
+		opacity: 0.5;
+	}
+
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+
+	&:hover {
+		@include breakpoint(wide) {
+			opacity: 1;
+		}
+	}
+
+	&.prev-arrow {
+		left: 10px;
+		
+		@include breakpoint(wide) {
+			left: -25px;
+		}
+		
+		@include breakpoint(desktop) {
+			left: -45px;
+		}
+
+		.slide-arrow {
+			background-image: url('../assets/img/icon-arrow-left.png');
+		}
+	}
+
+	&.next-arrow {
+		right: 10px;
+
+		@include breakpoint(wide) {
+			right: -25px;
+		}
+
+		@include breakpoint(desktop) {
+			right: -45px;
+		}
+
+		.slide-arrow {
+			background-image: url('../assets/img/icon-arrow-right.png');
+		}
+	}
+
+	&.slick-disabled {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.slide-arrow {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30px;
+		height: 54px;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@include breakpoint(wide) {
+			width: 20px;
+			height: 36px;
+			opacity: 0.5;
+		}
+
+		@include breakpoint(desktop) {
+			width: 30px;
+			height: 54px;
+		}
+	}
+}
+

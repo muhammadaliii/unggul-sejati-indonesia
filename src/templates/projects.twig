@@ -1,0 +1,171 @@
+{% extends 'layouts/default.twig' %}
+
+{% set body_class = 'project' %}
+
+{% block page %}
+
+<section class="title-page">
+	<div class="title-area">
+		<div class="container">
+			<h3 data-aos="fade-right">
+				Our
+				<span>Projects</span>
+			</h3>
+		</div>
+	</div>
+</section>
+<section class="content-detail">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-lg-6">
+				<article>
+					<p data-aos="fade-right" data-aos-delay="50">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+					</p>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="filter-project">
+	<div class="container">
+		<ul class="filter-nav flat" data-aos="fade-in">
+			<li>
+				<button type="button" class="filter" data-filter="all">All Projects</button>
+			</li>
+			<li>
+				<button type="button" class="filter" data-filter=".airport">Airport</button>
+			</li>
+			<li>
+				<button type="button" class="filter" data-filter=".highway">Highway</button>
+			</li>
+			<li>
+				<button type="button" class="filter" data-filter=".reservoir">Reservoir</button>
+			</li>
+			<li>
+				<button type="button" class="filter" data-filter=".exxon">Exxon</button>
+			</li>
+			<li>
+				<button type="button" class="filter" data-filter=".tanjung">Tanjung</button>
+			</li>
+		</ul>
+		<div class="container-mix" data-aos="fade-up">
+			<div class="row">
+				<div class="col-md-6 mix highway">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_6.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Highway</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Cipularang Highway Phase II</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+				<div class="col-md-6 mix airport">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_3.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Airports</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Kualanamu Airports</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+				<div class="col-md-6 mix highway">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_7.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Highway</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Pejagan Kanci Highway</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+				<div class="col-md-6 mix airport">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_2.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Airports</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Kertajati Airport</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+				<div class="col-md-6 mix reservoir">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_8.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Reservoir</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Waduk Jatigede</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+				<div class="col-md-6 mix exxon">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_11.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Exxon</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Exxon Bojonegoro</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+				<div class="col-md-6 mix tanjung">
+					<div class="project">
+						<div class="image-area shadow">
+							<img src="assets/img/images/images_4.jpg" alt="">
+						</div>
+						<ul class="tag">
+							<li>
+								<a href="#">Tanjung</a>
+							</li>
+						</ul>
+						<div class="desc-area">
+							<h5>Tanjung Uban Kepri</h5>
+						</div>
+						<a href="project-gallery.html" class="link"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

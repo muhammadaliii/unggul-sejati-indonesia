@@ -1,0 +1,527 @@
+:focus {
+	outline: 0;
+}
+
+html {
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+body {
+	font-family: 'museosans_500';
+	color: $body-color;
+	background-color: $body-background;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+main {
+	&:focus {
+		outline: 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $red;
+	transition: all 0.3s linear;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul,
+ol {
+	margin: 0;
+
+	&.flat {
+		li {
+			display: inline-block;
+			margin: 0 8px 0 0;
+		}
+	}
+}
+
+p {
+	margin: 0;
+
+	+ p {
+		margin: 16px 0 0;
+		
+		@include breakpoint(tablet) {
+			margin: 20px 0 0;
+		}
+	}
+}
+
+.container {
+	padding: 0 16px;
+
+	@include breakpoint(tablet) {
+		padding: 0;
+	}
+}
+
+.container-fluid {
+	@include breakpoint(tablet) {
+		padding: 0 30px;
+	}
+
+	@include breakpoint(desktop) {
+		padding: 0 60px;
+	}
+
+	&.full-width {
+		padding: 0;
+	}
+}
+
+section {
+	position: relative;
+	overflow: hidden;
+	padding: 30px 0;
+	z-index: 1;
+	
+	@include breakpoint(tablet) {
+		padding: 50px 0;
+	}
+	
+	@include breakpoint(wide) {
+		padding: 60px 0;
+	}
+
+	&:first-child {
+		padding-top: 54px;
+
+		@include breakpoint(tablet) {
+			padding-top: 64px;
+		}
+	}
+
+	&.map-contact {
+		@include breakpoint(width-tablet) {
+			padding-top: 0;
+		}
+	}
+
+	&.title-page {
+		padding-bottom: 0;
+	}
+
+	&.cover {
+		padding: 0;
+
+		@include breakpoint(wide) {
+			padding: 64px 0 0;
+		}
+	}
+
+	&.partners-info {
+		@include breakpoint(tablet) {
+			padding: 40px 0;
+		}
+	}
+}
+
+.show-mobile {
+	display: block!important;
+
+	@include breakpoint(wide) {
+		display: none!important;
+	}
+}
+
+.show-desktop {
+	display: none!important;
+
+	@include breakpoint(wide) {
+		display: block!important;
+	}
+}
+
+.progressive-image {
+	width: 100%;
+}
+
+.title-page {
+	position: relative;
+	z-index: 2;
+
+	&.contact-title {
+		display: none;
+		
+		@include breakpoint(tablet) {
+			display: block;
+		}
+	}
+	
+	.title-area {
+		padding: 40px 0 0;
+		position: relative;
+		
+		@include breakpoint(tablet) {
+			padding: 60px 0 0;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: initial;
+			height: 85%;
+			background-color: $bg-default;
+		}
+
+		+ .content-detail {
+			margin: 30px 0 0;
+			
+			@include breakpoint(tablet) {
+				margin: 40px 0 0;
+			}
+		}
+
+		h3 {
+			font-size: 2.4em;
+			font-family: 'gilroy_black';
+			text-transform: uppercase;
+			line-height: 100%;
+			color: $subtitle-color;
+			
+			@include breakpoint(tablet) {
+				font-size: 3.6em;
+			}
+			
+			@include breakpoint(wide) {
+				font-size: 3.2em;
+			}
+			
+			@include breakpoint(wide-laptop) {
+				font-size: 4em;
+			}
+
+			span {
+				color: $title-color;
+				display: block;
+			}
+		}
+
+		h4 {
+			font-size: 2em;
+			font-family: 'gilroy_black';
+			text-transform: uppercase;
+			line-height: 100%;
+			color: $subtitle-color;
+			
+			@include breakpoint(small-mobile) {
+				font-size: 1.9em;
+			}
+
+			@include breakpoint(tablet) {
+				font-size: 2.8em;
+			}
+			
+			@include breakpoint(wide) {
+				font-size: 2.4	em;
+			}
+			
+			@include breakpoint(wide-laptop) {
+				font-size: 3em;
+			}
+
+			small {
+				font-size: 50%;
+				letter-spacing: 0.5pt;
+
+				+ span {
+					margin: 4px 0 0;
+				}
+			}
+
+			span {
+				color: $title-color;
+				display: block;
+			}
+		}
+	}
+}
+
+.title-section {
+	h3 {
+		font-size: 2.4em;
+		font-family: 'gilroy_black';
+		text-transform: uppercase;
+		line-height: 100%;
+		color: $subtitle-color;
+		
+		@include breakpoint(tablet) {
+			font-size: 3.6em;
+		}
+		
+		@include breakpoint(wide) {
+			font-size: 3.2em;
+		}
+		
+		@include breakpoint(wide-laptop) {
+			font-size: 4em;
+		}
+
+		span {
+			color: $title-color;
+			display: block;
+		}
+
+		+ .link-cta {
+			margin: 10px 0 0;
+		}
+	}
+
+	.link-cta {
+		.icon-arrow {
+			width: 18px;
+			height: 18px;
+			
+			@include breakpoint(small-mobile) {
+				width: 16px;
+				height: 16px;
+			}
+
+			@include breakpoint(tablet) {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}
+
+.link-cta {
+	.cta {
+		color: $red;
+		font-size: 1.2em;
+
+		@include breakpoint(small-mobile) {
+			font-size: 1.1em;
+		}
+
+		@include breakpoint(tablet) {
+			font-size: 1.4em;
+		}
+
+		&:focus,
+		&:hover {
+			color: $red;
+
+			.icon-arrow {
+				@include breakpoint(desktop) {
+					margin: 0 0 0 10px;
+				}
+			}
+		}
+	}
+
+	span {
+		line-height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.icon-arrow {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0 0 4px;
+		width: 20px;
+		height: 20px;
+		background-image: url('../assets/img/icon-chevron-red-right.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		transition: all 0.1s linear;
+		
+		@include breakpoint(small-mobile) {
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+.tag {
+	padding: 0;
+
+	+ .desc-area {
+		margin: 5px 0 0;
+		
+		@include breakpoint(tablet) {
+			margin: 10px 0 0;
+		}
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+
+		+ li {
+			margin: 0 0 0 4px;
+		}
+	}
+
+	a {
+		font-family: 'gilroy_black';
+		font-size: 0.8em;
+		text-transform: uppercase;
+		letter-spacing: 0.8pt;
+		
+		&:focus,
+		&:hover {
+			color: $red;
+		}
+	
+		@include breakpoint(tablet) {
+			font-size: 0.9em;
+		}
+	}
+}
+
+.selector {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	&:hover {
+		.overlay-bg {
+			@include breakpoint(wide) {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: visible;
+			}
+
+			.bracket {
+				&.top {
+					&:before,
+					&:after {
+						@include breakpoint(wide) {
+							opacity: 1;
+							visibility: visible;
+							top: 20px;
+							left: 20px;
+						}
+					}
+				}
+
+				&.bottom {
+					&:before,
+					&:after {
+						@include breakpoint(wide) {
+							opacity: 1;
+							visibility: visible;
+							bottom: 20px;
+							right: 20px;
+						}
+					}
+				}
+			}
+		}
+
+		.hover-icon {
+			@include breakpoint(wide) {
+				opacity: 1;
+				visibility: visible;
+				transform: translate(-50%, -50%) scale(1) rotate(0);
+			}
+
+			.icon {
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				background: url('../assets/img/icon-hover-white.png') center no-repeat;
+				background-size: contain;
+			}
+		}
+
+		.image-background {
+			@include breakpoint(wide) {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.image-background {
+		transition: all 0.3s linear;
+	}
+
+	.overlay-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		background-color: rgba(0,0,0,0.6);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.3s linear;
+	}
+
+	.overlay-mobile {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		.icon {
+			font-size: 0.85em;
+			text-align: center;
+			color: $white;
+			line-height: 24px;
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: initial;
+			bottom: 0;
+			left: initial;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+			border-top-left-radius: 4px;
+
+			span {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	.hover-icon {
+		position: absolute;
+		top: 50%;
+		bottom: initial;
+		left: 50%;
+		right: initial;
+		transition: all 0.4s linear;
+		transform: translate(-50%, -50%) scale(0.3) rotate(60deg);
+	}
+}
+
+.shadow {
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3);
+}
+
+.content-detail {
+	p {
+		font-size: 1em;
+
+		@include breakpoint(tablet) {
+			font-size: 1.1em;
+		}
+	}
+}
+
