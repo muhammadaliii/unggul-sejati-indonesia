@@ -52,10 +52,20 @@ footer {
 			}
 
 			&.phone-email {
-				margin-top: 10px;
-				
 				@include breakpoint(tablet) {
 					margin-top: 0;
+				}
+			}
+		}
+
+		.col-lg-6 {
+			+ .col-lg-6 {
+				@include breakpoint(tablet) {
+					margin: 20px 0 0;
+				}
+
+				@include breakpoint(wide) {
+					margin: 0;
 				}
 			}
 		}
@@ -103,7 +113,6 @@ footer {
 		font-size: 1.2em;
 		width: 220px;
 		letter-spacing: 0.5pt;
-		margin: 0 0 20px;
 
 		@include breakpoint(tablet) {
 			font-size: 1.3em;
@@ -157,7 +166,13 @@ footer {
 
 	.phone {
 		li {
-			margin: 6px 0 0;
+			+li {
+				margin: 16px 0 0;
+				
+				@include breakpoint(wide) {
+					margin: 6px 0 0;
+				}
+			}
 		}
 	}
 
