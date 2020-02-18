@@ -57,6 +57,10 @@ var paths = {
 		input: 'src/assets/img/**/*',
 		output: 'dist/assets/img'
 	},
+	vid: {
+		input: 'src/assets/video/**/*',
+		output: 'dist/assets/video'
+	},
 	fonts: {
 		input: 'src/assets/fonts/**/*',
 		output: 'dist/assets/fonts'
@@ -193,6 +197,21 @@ gulp.task('images', function (done) {
 });
 
 /**
+ * Video
+ */
+gulp.task('video', function (done) {
+	return gulp.src([
+		paths.vid.input
+	], {
+		'dot': true // include hidden files
+	})
+		.pipe(changed(paths.vid.output))
+		.pipe(gulp.dest(paths.vid.output))
+		.pipe(browserSync.reload({stream:true}))
+		done();
+});
+
+/**
  * Fonts
  */
 gulp.task('fonts', function (done) {
@@ -244,6 +263,9 @@ gulp.task('watch-files', function () {
 	watch(paths.img.input, function () {
 		gulp.start('images');
 	});
+	watch(paths.vid.input, function () {
+		gulp.start('video');
+	});
 	watch(paths.fonts.input, function () {
 		gulp.start('fonts');
 	});
@@ -287,6 +309,7 @@ gulp.task('build', function (done) {
 		'js:vendor',
 		'js:main',
 		'images',
+		'video',
 		'fonts',
 		'twig',
 		'copy:misc'

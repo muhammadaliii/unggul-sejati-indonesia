@@ -1,4 +1,4 @@
-.lg-outer {
+	.lg-outer {
 	.lg-img-wrap {
 		padding: 0;
 	}
@@ -8,7 +8,7 @@
 		height: 36px;
 		top: -36px;
 		right: 0px;
-		background-color: $bg-semi-black;
+		background-color: rgba(47, 47, 47, 0.6);
 		padding: 0;
 		line-height: 36px;
 		border-radius: 6px 0 0 0;
@@ -16,13 +16,13 @@
 
 	.lg-thumb-outer {
 		height: auto!important;
+		background-color: rgba(47, 47, 47, 0.6);
 	}
 
 	.lg-thumb {
 		text-align: center;
 		margin: 0 auto;
 		height: auto;
-		background-color: $bg-semi-black;
 
 		.lg-thumb-item {
 			float: none;

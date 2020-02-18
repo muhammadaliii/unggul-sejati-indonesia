@@ -22,7 +22,6 @@
 		thumbnail: true,
 		animateThumb: true,
 		showThumbByDefault: false,
-		exThumbImage: 'data-exthumbimage',
 		selector: '.selector',
 		download: false,
 	});
